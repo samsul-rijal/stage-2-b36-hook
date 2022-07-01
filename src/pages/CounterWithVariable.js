@@ -3,14 +3,18 @@ import { Container, Row, Col, Button } from 'react-bootstrap';
 
 // Declare counter variable here ...
 let counter = 0
+let counter2 = 1
 
 function CounterWithVariable() {
   // Init useReducer for forceUpdate component here ...
 const[_, forceUpdate] = useReducer((item) => item + 1, 0)
 
+
   // Create function for Handle Increment here ...
   const Add = () => {
     counter = counter + 10
+    counter2 = counter2 + 1
+
     forceUpdate()
   }
 
@@ -26,6 +30,7 @@ const[_, forceUpdate] = useReducer((item) => item + 1, 0)
         className="d-flex align-items-center justify-content-center"
         style={{ height: '50vh' }}
       >
+        <h2>{counter2}</h2>
         <Col md="6 text-center">
           <h4>Counter with Variable</h4>
           <h1>{counter}</h1>
