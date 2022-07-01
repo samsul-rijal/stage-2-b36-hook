@@ -7,7 +7,6 @@ import {
 
 import Welcome from './Welcome'
 import GuestGreeting from './GuestGreeting'
-import { Component } from 'react'
 import { useEffect } from 'react'
 
 function App() {
@@ -21,7 +20,7 @@ function App() {
     })
 
     // Create DidMount with useEffect inside it can print "App Component Did Mount" & state value here
-    useEffect(()=>{
+    useEffect(() => {
         console.log("2. App component didmount");
         console.log(state);
     })
