@@ -1,4 +1,5 @@
 //import useState & useEffect here
+import { useState } from 'react'
 import { 
     Container, 
     Row, Col, Form, 
@@ -6,6 +7,8 @@ import {
 
 import Welcome from './Welcome'
 import GuestGreeting from './GuestGreeting'
+import { Component } from 'react'
+import { useEffect } from 'react'
 
 function App() {
 
@@ -18,8 +21,18 @@ function App() {
     })
 
     // Create DidMount with useEffect inside it can print "App Component Did Mount" & state value here
+    useEffect(()=>{
+        console.log("2. App component didmount");
+        console.log(state);
+    })
 
     // Create DidUpdate with useEffect inside it can print "App Component Did Update" & state value here
+    useEffect(() => {
+        if(state.user.email){
+            console.log("App component didupdate");
+            console.log(state);
+        }
+    })
 
     const handleOnSubmit = (e) => {
         e.preventDefault()
