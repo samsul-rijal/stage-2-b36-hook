@@ -1,19 +1,29 @@
 //import useState here
-import { 
-        Container, 
-        Row, Col, Form, 
-        Button } from 'react-bootstrap'
+import { useState } from 'react'
+import { Container, Row, Col, Form, Button } from 'react-bootstrap'
 
 function ExampleForm() {
   //create state with attribute fullname, email & password here..
+  const [state, setState] = useState({
+    fullname: "",
+    email: "",
+    password: ""
+  })
+
+  // const name = document.getElementById("name").value
 
   const handleOnChange = (e) => {
     // setState here
+    setState({
+      ...state,
+      [e.target.name]: e.target.value
+    })
   }
 
   const handleOnSubmit = (e) => {
     e.preventDefault()
     //print state value with console.log here
+    console.log(state);
   }
 
     return (
